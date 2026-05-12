@@ -1,33 +1,25 @@
 # djlinker-callback (GitHub Pages)
 
-This folder is meant to become its **own** public GitHub repo **`Jboltle/djlinker-callback`**, so Pages serves:
+Live site: **https://jboltle.github.io/djlinker-callback/** (GitHub canonical host is lowercase.)
 
-**https://Jboltle.github.io/djlinker-callback/**
+`index.html` is a copy of `public/oauth-callback.html` from the parent vdj-link-map repo (re-copy after edits to that file).
 
-`index.html` is a copy of `public/oauth-callback.html` from this project (re-copy after edits to that file).
+## Repo
 
-## One-time: create the GitHub repo and push
+Published from **https://github.com/Jboltle/djlinker-callback** (branch `main`, Pages source `/`).
+
+## Updating the callback page
+
+From the parent project root:
 
 ```bash
+cp public/oauth-callback.html deploy/djlinker-callback/index.html
 cd deploy/djlinker-callback
-git init -b main
-git add index.html .nojekyll README.md
-git commit -m "Add SoundCloud OAuth callback for djLinker"
+git add index.html && git commit -m "Sync oauth callback" && git push
 ```
-
-Create an **empty** public repository on GitHub named **`djlinker-callback`** under **`Jboltle`**, then:
-
-```bash
-git remote add origin https://github.com/Jboltle/djlinker-callback.git
-git push -u origin main
-```
-
-## Enable Pages
-
-On GitHub: **Settings → Pages → Source**: branch **`main`**, folder **`/ (root)`**.
 
 ## SoundCloud + `.env`
 
 Use this exact redirect URI in the SoundCloud app and in `SOUNDCLOUD_REDIRECT_URI`:
 
-`https://Jboltle.github.io/djlinker-callback/`
+`https://jboltle.github.io/djlinker-callback/`
